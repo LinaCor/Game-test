@@ -227,25 +227,58 @@ h6 {
 
 /*popup*/
 
-.popup-overlay {
+/*.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}*/
+
+.overlay {
+  position: relative;
 }
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
 
 .popup {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 2s;
+  animation: show 0.5s ease-in-out;
+  z-index: 20;
 }
+
+@keyframes show {
+  0% {
+    top: -50%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
 
 .popup h3 {
   width: 265px;
@@ -260,7 +293,9 @@ h6 {
   text-align: center;
   box-shadow: 1px 0px 2px 0 #000 inset;
   position: relative;
-  top: 24px;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .popup .popup__container {
