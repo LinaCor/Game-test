@@ -376,6 +376,7 @@ h6 {
   background-color: #8c5a31;
   border-radius: 15px;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 .container-table::-webkit-scrollbar {
@@ -404,12 +405,12 @@ table {
 }
 
 thead {
-  background: linear-gradient(to bottom, #00d1fc 0%, #008daa 40%);
   border: 3px solid #007e98;
   font-size: 12px;
 }
 
 thead th {
+  background: linear-gradient(to bottom, #00d1fc 0%, #008daa 40%);
   border-top: 2px solid #007e98;
   border-bottom: 2px solid #007e98;
 }
@@ -419,6 +420,7 @@ thead th:first-child {
   border-radius: 35px 0 0 35px;
   border-left: 3px solid #007e98;
   box-shadow: 1px 0 0 #283b66 inset;
+
 }
 
 thead th:nth-child(2),
@@ -453,15 +455,21 @@ td {
 }
 
 .table-item {
-  background: linear-gradient(to bottom, #54b0c6 0%, #3b99b0 50%);
   border: 3px solid #72bed0;
   font-size: 14px;
   font-weight: 600;
 }
 
+.table-item td {
+  background: linear-gradient(to bottom, #54b0c6 0%, #3b99b0 50%);
+}
+
 .friends {
-  background: linear-gradient(to bottom, #61c654 0%, #318d25 50%);
   border: 3px solid #489b3d;
+}
+
+.friends td {
+  background: linear-gradient(to bottom, #61c654 0%, #318d25 50%);
 }
 
 .table-item.friends td:first-child {
