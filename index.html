@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link href="img/rating.png" rel="shortcut icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main class="container">
+    <div class="container-map">
+      <div class="map">
+        <div class="map-icon">
+          <img src="img/girl-icon.png" class="icon" alt="icon">
+        </div>
+      </div>
+
+      <div class="navigation">
+        <div class="navigation-people">
+          <ul class="navigation-people__list">
+            <li class="first-item people-avatar"></li>
+            <li class="people-avatar"></li>
+            <li class="people-avatar"></li>
+            <li class="people-avatar"></li>
+            <li class="people-avatar"></li>
+            <li class="people-avatar"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <button class="navigation-chat"></button>
+        <button class="navigation-university">в универ</button>
+        <button class="navigation-mail"></button>
+        <button class="navigation-rating"></button>
+      </div>
+    </div>
+  </main>
+
+  <div class="popup-overlay">
+    <div class="popup">
+      <h3>Рейтинг игроков</h3>
+      <div class="popup__container">
+        <div class="container-button">
+          <button></button>
+        </div>
+        <div class="container-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Место</th>
+                <th></th>
+                <th>Имя Фамилия</th>
+                <th>Опыт</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="empty-row">
+              </tr>
+
+              <tr class="table-item">
+                <td>1</td>
+                <td></td>
+                <td>Ваш друг</td>
+                <td>1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/data.js"></script>
+</body>
+
+</html>
