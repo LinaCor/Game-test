@@ -1,6 +1,5 @@
 import { data } from "./data.js";
 
-
 //popup
 const map = document.querySelector('.container-map');
 const popup = document.querySelector('.popup');
@@ -15,7 +14,7 @@ const clickClose = (evt) => {
 };
 
 window.addEventListener('click', function (evt) {
-  clickClose(evt)
+  clickClose(evt);
 });
 
 openBtnPopup.addEventListener('click', function () {
@@ -27,6 +26,7 @@ closeBtnPopup.addEventListener('click', function (evt) {
   popup.style.display = 'none';
   map.classList.remove('overlay');
 });
+//-----------------------------------------------------------------//
 
 
 //slider
@@ -35,7 +35,6 @@ const prevBtn = navPeople.querySelector('.navigation-people__prevBtn');
 const nextBtn = navPeople.querySelector('.navigation-people__nextBtn');
 const slidesList = navPeople.querySelector('.navigation-people__list');
 const slides = Array.from(slidesList.querySelectorAll('li'));
-let currentIndex = 0;
 
 function updateList() {
   slidesList.innerHTML = '';
@@ -58,16 +57,13 @@ nextBtn.addEventListener('click', function () {
 });
 
 updateList();
+//-----------------------------------------------------------------//
 
 
 //data rating
 const table = document.querySelector('.container-table tbody');
 const rating = data.rating;
 const friends = data.friends;
-
-
-console.log(rating, friends)
-
 
 function updateRating() {
   table.innerHTML = ''
@@ -92,5 +88,56 @@ function updateRating() {
 }
 
 updateRating();
+//-----------------------------------------------------------------//
+
+
+//go to university
+const btnStep = document.querySelector('.navigation-university');
+const iconGirl = document.querySelector('.map-icon');
+const steps = [
+  {
+    left: 340,
+    bottom: 75,
+  },
+  {
+    left: 265,
+    bottom: 30,
+  },
+  {
+    left: 180,
+    bottom: 15,
+  },
+  {
+    left: 100,
+    bottom: 40,
+  },
+  {
+    left: 112,
+    bottom: 105,
+  },
+];
+let currentStep = 0;
+
+btnStep.addEventListener('click', function () {
+  currentStep++;
+  goToPoint(currentStep);
+});
+
+function goToPoint(number) {
+
+  if (number <= steps.length) {
+    iconGirl.classList.add('hidden');
+    setTimeout(() => {
+      iconGirl.style.left = `${steps[number - 1].left}px`;
+      iconGirl.style.bottom = `${steps[number - 1].bottom}px`;
+      iconGirl.classList.remove('hidden');
+    }, 1000);
+  }
+  return;
+}
+
+
+
+
 
 

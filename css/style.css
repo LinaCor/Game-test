@@ -113,6 +113,26 @@ h6 {
   position: absolute;
   left: 435px;
   bottom: 45px;
+  animation: girl 1s infinite ease-in-out;
+  transition: opacity 1s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes girl {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .navigation {
@@ -128,7 +148,6 @@ h6 {
   background: linear-gradient(to bottom, #58b6c5 60%, #2a8b9d 90%);
   border-radius: 15px;
   border: 3px solid #58b6c5;
-  position: relative;
   box-shadow: 1px 1px 2px 0 #000 inset;
 }
 
@@ -137,6 +156,8 @@ h6 {
   width: 20px;
   margin: 0 5px;
   background-color: transparent;
+  position: relative;
+
 }
 
 .navigation-people__prevBtn::before,
@@ -152,8 +173,14 @@ h6 {
 }
 
 .navigation-people__nextBtn::after {
-  left: 508px;
-  transform: translateY(-50%) scaleX(-1);
+  left: 5px;
+  border-right: transparent;
+  border-left: 14px solid #fff;
+}
+
+.navigation-people__prevBtn:active,
+.navigation-people__nextBtn:active {
+  transform: scale(1.2);
 }
 
 .navigation-people__list {
@@ -211,6 +238,11 @@ h6 {
   font-size: 30px;
   font-family: "Noto Serif", serif;
   box-shadow: 1px 2px 4px 0 #000, 1px 1px 2px 0 #000 inset;
+}
+
+.navigation-university:active,
+.navigation-rating:active {
+  transform: scale(0.97);
 }
 
 
