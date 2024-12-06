@@ -1,3 +1,6 @@
+import { data } from "./data.js";
+
+
 //popup
 const map = document.querySelector('.container-map');
 const popup = document.querySelector('.popup');
@@ -57,7 +60,37 @@ nextBtn.addEventListener('click', function () {
 updateList();
 
 
+//data rating
+const table = document.querySelector('.container-table tbody');
+const rating = data.rating;
+const friends = data.friends;
 
 
+console.log(rating, friends)
+
+
+function updateRating() {
+  table.innerHTML = ''
+
+  if (rating.length) {
+    for (let i = 0; i < rating.length; i++) {
+
+      let isFriends = friends.find(item => item.id == rating[i].id);
+
+      table.insertAdjacentHTML('beforeend', `
+        <tr class="empty-row">
+        </tr>
+        <tr class="table-item ${isFriends ? 'friends' : ''}">
+          <td>${rating[i].id}</td>
+          <td><img alt="icon" src="https://avatars.mds.yandex.net/i?id=718dd27ac084f39d599cd6c76445316e-5244772-images-thumbs&n=13"></td>
+          <td>${rating[i].name} ${rating[i].lastName}</td >
+          <td>${rating[i].points}</td>
+        </tr >
+      `)
+    }
+  }
+}
+
+updateRating();
 
 
